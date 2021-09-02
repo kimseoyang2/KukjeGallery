@@ -553,7 +553,7 @@ MonoBehaviour:
   joystickR: {fileID: 946950824}
   moveableObj: {fileID: 2082612001}
   moveableCamera: {fileID: 963194225}
-  moveSpeed: 0.5
+  moveSpeed: 0.824
   rotateSpeed: 0.5
 --- !u!4 &770537815
 Transform:
