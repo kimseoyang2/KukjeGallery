@@ -14,6 +14,13 @@ public class KeyboardMove : MonoBehaviour
 
     public Action<Vector2> OnMoveKeyClicked = null;
 
+    private const float moveMulti = 1.5f;
+
+    //private void Awake ()
+    //{
+    //    MainSceneEvenetManager.OnMoveableChanged += SetMoveable;
+    //}
+
     public void SetMoveable (bool isMoveable)
     {
         if (isMoveable)
@@ -61,7 +68,7 @@ public class KeyboardMove : MonoBehaviour
 
             if(OnMoveKeyClicked != null)
             {
-                OnMoveKeyClicked.Invoke(additionalPos);
+                OnMoveKeyClicked.Invoke(additionalPos * moveMulti);
             }
 
             yield return null;

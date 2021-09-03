@@ -20,6 +20,9 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     private Vector2 inputVec;
 
+    private const float moveMult = 2.5f;
+    private const float rotateMult = 15f;
+
     public void SetJoysticVisible(bool isVisible)
     {
         gameObject.SetActive(isVisible);
@@ -31,11 +34,11 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         {
             if (joysticVal == Joystic.move)
             {
-                OnJoysticMove.Invoke(inputVec * 2.5f);
+                OnJoysticMove.Invoke(inputVec * moveMult);
             }
             else if (joysticVal == Joystic.rotate)
             {
-                OnJoysticRotate.Invoke(inputVec * 10f);
+                OnJoysticRotate.Invoke(inputVec * rotateMult);
             }
         }
     }
