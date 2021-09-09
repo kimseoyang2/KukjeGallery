@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(KeyboardMove), typeof(MouseDragRotate), typeof(TouchDragRotate))]
-public class MoveManager : MonoBehaviour
+public class MoveManager : SingletonBehavior<MoveManager>
 {
     [SerializeField]
     private KeyboardMove keyboardMove = null;
@@ -11,14 +11,16 @@ public class MoveManager : MonoBehaviour
     private MouseDragRotate mouseDragRotate = null;
     [SerializeField]
     private TouchDragRotate touchDragRotate = null;
+    [SerializeField]
+    private RayCastMove rayCastMove = null;
 
     [SerializeField]
     private Joystick joystickL = null;
 
-    [SerializeField]
-    private GameObject moveableObj = null;
-    [SerializeField]
-    private GameObject moveableCamera = null;
+    
+    public GameObject moveableObj = null;
+    
+    public GameObject moveableCamera = null;
 
     [SerializeField, Range(0, 1)]
     private float moveSpeed = 0.5f;
@@ -28,10 +30,13 @@ public class MoveManager : MonoBehaviour
     [SerializeField, Range(0.1f, 2f)]
     public float touchMoveDuration = 1f;
 
-    private void Start ()
+    protected override void Awake ()
     {
+        base.Awake();
+
         EventController.inst.OnPCMoveableChanged += keyboardMove.SetMoveable;
         EventController.inst.OnPCMoveableChanged += mouseDragRotate.SetMouseDragable;
+        EventController.inst.OnPCMoveableChanged += rayCastMove.SetMoveable;
 
         EventController.inst.OnMobileMoveableChanged += touchDragRotate.SetTouchDragable;
         EventController.inst.OnMobileMoveableChanged += joystickL.SetJoysticVisible;
@@ -59,10 +64,15 @@ public class MoveManager : MonoBehaviour
             EventController.inst.OnMobileMoveableChanged.Invoke(true);
         }
 
-        
+
 
         EventController.inst.SetPlayerNewPos += SetPos;
         EventController.inst.SetPlayerNewEular += SetEular;
+    }
+
+    private void Start ()
+    {
+        
     }
 
     private void Move (Vector2 moveDelta)
@@ -100,6 +110,20 @@ public class MoveManager : MonoBehaviour
     public void SetEular(Vector3 newEular)
     {
         StartCoroutine(SetEularRoutine(newEular));
+    }
+
+    public void SetMovable(bool moveable)
+    {
+        if (!MobileCheck.isMobile())
+        {
+            EventController.inst.OnPCMoveableChanged.Invoke(true);
+            EventController.inst.OnMobileMoveableChanged.Invoke(false);
+        }
+        else
+        {
+            EventController.inst.OnPCMoveableChanged.Invoke(false);
+            EventController.inst.OnMobileMoveableChanged.Invoke(true);
+        }
     }
 
     private IEnumerator SetPosRoutine(Vector3 newPos)

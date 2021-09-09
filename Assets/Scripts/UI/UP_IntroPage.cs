@@ -7,6 +7,8 @@ public class UP_IntroPage : UP_BasePage
 {
     [SerializeField]
     private UC_IntroComponent[] introCompos;
+    [SerializeField]
+    private UC_VideoComponent videoCompo;
 
     public override void Init ()
     {
@@ -30,6 +32,12 @@ public class UP_IntroPage : UP_BasePage
             {
                 EventController.inst.OnIntroLastBtnClicked.Invoke();
             }
+        }
+
+        if(index == 0)
+        {
+            videoCompo.gameObject.SetActive(true);
+            videoCompo.StartVideo();
         }
     }
 

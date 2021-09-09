@@ -20,12 +20,22 @@ public class UIManager : SingletonBehavior<UIManager>
         introPage.gameObject.SetActive(true);
         inGamePage.gameObject.SetActive(false);
 
+        MoveManager.inst.SetMovable(false);
         EventController.inst.OnIntroLastBtnClicked += InGamePageOn;
     }
 
     private void InGamePageOn()
     {
+        
         introPage.gameObject.SetActive(false);
         inGamePage.gameObject.SetActive(true);
+
+        Invoke("MovemanagerMoveable", 1);
+        
+    }
+
+    private void MovemanagerMoveable()
+    {
+        MoveManager.inst.SetMovable(true);
     }
 }
