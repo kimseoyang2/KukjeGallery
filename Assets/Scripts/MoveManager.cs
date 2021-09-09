@@ -14,8 +14,6 @@ public class MoveManager : MonoBehaviour
 
     [SerializeField]
     private Joystick joystickL = null;
-    [SerializeField]
-    private Joystick joystickR = null;
 
     [SerializeField]
     private GameObject moveableObj = null;
@@ -30,14 +28,13 @@ public class MoveManager : MonoBehaviour
     [SerializeField, Range(0.1f, 2f)]
     public float touchMoveDuration = 1f;
 
-    private void Awake ()
+    private void Start ()
     {
-        MainSceneEvenetManager.OnPCMoveableChanged += keyboardMove.SetMoveable;
-        MainSceneEvenetManager.OnPCMoveableChanged += mouseDragRotate.SetMouseDragable;
+        EventController.inst.OnPCMoveableChanged += keyboardMove.SetMoveable;
+        EventController.inst.OnPCMoveableChanged += mouseDragRotate.SetMouseDragable;
 
-        MainSceneEvenetManager.OnMobileMoveableChanged += touchDragRotate.SetTouchDragable;
-        MainSceneEvenetManager.OnMobileMoveableChanged += joystickL.SetJoysticVisible;
-        MainSceneEvenetManager.OnMobileMoveableChanged += joystickR.SetJoysticVisible;
+        EventController.inst.OnMobileMoveableChanged += touchDragRotate.SetTouchDragable;
+        EventController.inst.OnMobileMoveableChanged += joystickL.SetJoysticVisible;
 
         if (!MobileCheck.isMobile())
         {
@@ -45,10 +42,9 @@ public class MoveManager : MonoBehaviour
             mouseDragRotate.OnDraged += Rotate;
 
             joystickL.SetJoysticVisible(false);
-            joystickR.SetJoysticVisible(false);
 
-            MainSceneEvenetManager.OnPCMoveableChanged.Invoke(true);
-            MainSceneEvenetManager.OnMobileMoveableChanged.Invoke(false);
+            EventController.inst.OnPCMoveableChanged.Invoke(true);
+            EventController.inst.OnMobileMoveableChanged.Invoke(false);
         }
         else
         {
@@ -57,20 +53,16 @@ public class MoveManager : MonoBehaviour
             joystickL.OnJoysticMove += Move;
             joystickL.OnJoysticRotate += Rotate;
 
-            joystickR.OnJoysticMove += Move;
-            joystickR.OnJoysticRotate += Rotate;
-
             joystickL.SetJoysticVisible(true);
-            joystickR.SetJoysticVisible(true);
 
-            MainSceneEvenetManager.OnPCMoveableChanged.Invoke(false);
-            MainSceneEvenetManager.OnMobileMoveableChanged.Invoke(true);
+            EventController.inst.OnPCMoveableChanged.Invoke(false);
+            EventController.inst.OnMobileMoveableChanged.Invoke(true);
         }
 
         
 
-        MainSceneEvenetManager.SetPlayerNewPos += SetPos;
-        MainSceneEvenetManager.SetPlayerNewEular += SetEular;
+        EventController.inst.SetPlayerNewPos += SetPos;
+        EventController.inst.SetPlayerNewEular += SetEular;
     }
 
     private void Move (Vector2 moveDelta)
@@ -118,7 +110,7 @@ public class MoveManager : MonoBehaviour
         Vector3 playerPosOrigin = moveableObj.transform.position;
         Vector3 targetPos;
 
-        MainSceneEvenetManager.SetPlayerMoveable(false);
+        GameManager.inst.SetPlayerMoveable(false);
         while (time < animTime)
         {
             targetPos = Vector3.Lerp(playerPosOrigin, newPos, time / animTime);
@@ -128,7 +120,7 @@ public class MoveManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
             time += Time.deltaTime;
         }
-        MainSceneEvenetManager.SetPlayerMoveable(true);
+        GameManager.inst.SetPlayerMoveable(true);
     }
 
     private IEnumerator SetEularRoutine(Vector3 newEular)
@@ -142,7 +134,7 @@ public class MoveManager : MonoBehaviour
 
         Quaternion originCamRot = moveableCamera.transform.localRotation;
 
-        MainSceneEvenetManager.SetPlayerMoveable(false);
+        GameManager.inst.SetPlayerMoveable(false);
         while (time < animTime)
         {
             targetRot = Quaternion.LerpUnclamped(originRot, destRot, time/animTime);
@@ -154,6 +146,6 @@ public class MoveManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
             time += Time.deltaTime;
         }
-        MainSceneEvenetManager.SetPlayerMoveable(true);
+        GameManager.inst.SetPlayerMoveable(true);
     }
 }

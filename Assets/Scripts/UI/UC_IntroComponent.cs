@@ -24,5 +24,7 @@ public class UC_IntroComponent : UC_BaseComponent
         {
             OnBtnClickAction.Invoke();
         }
+
+        gameObject.SetActive(false);
     }
 }

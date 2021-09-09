@@ -18,8 +18,32 @@ public class BGSoundManager : SingletonBehavior<BGSoundManager>
 
     public void ChangeClip(int clipIndex)
     {
+        AudioClip newClip;
+        try
+        {
+            newClip = clips[clipIndex];
+        }
+        catch (System.IndexOutOfRangeException)
+        {
+            Debug.Log(string.Format("Clip[{0}] is not exist", clipIndex));
+            return;
+        }
+
+
         audioSource.Stop();
-        audioSource.clip = clips[clipIndex];
+        audioSource.clip = newClip;
         audioSource.Play();
+    }
+
+    public void BgmSoundOnOff(bool isOn)
+    {
+        if(isOn)
+        {
+            audioSource.volume = 1;
+        }
+        else
+        {
+            audioSource.volume = 0;
+        } 
     }
 }
