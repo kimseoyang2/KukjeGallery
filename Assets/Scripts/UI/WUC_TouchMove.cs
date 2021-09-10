@@ -20,6 +20,6 @@ public class WUC_TouchMove : MonoBehaviour
         targetPos = transform.position;
         targetEular = transform.localEulerAngles;
 
-        MainSceneEvenetManager.MoveWUC_Touch(targetPos, targetEular);
+        GameManager.inst.MoveWUC_Touch(targetPos, targetEular);
     }
 }
