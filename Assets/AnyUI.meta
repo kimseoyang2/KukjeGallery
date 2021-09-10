@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefab/Object.meta
+guid: 74754448a53651841918120940b0ed9c
+=======
 guid: fc1ff967ac9f6b046957b775a38acdc0
+>>>>>>> develop:Assets/AnyUI.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
