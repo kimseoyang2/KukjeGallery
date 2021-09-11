@@ -1,28 +1,69 @@
 fileFormatVersion: 2
 guid: 554b61adb02e71648a7af340975726d4
 ScriptedImporter:
-  fileIDToRecycleName:
-    100002: Main/
-    100004: Main//M2_LOD0
-    100006: Main//M2_LOD1
-    100008: Main//M2_LOD2
-    400002: Main//Transform
-    400004: Main//M2_LOD0/Transform
-    400006: Main//M2_LOD1/Transform
-    400008: Main//M2_LOD2/Transform
-    2300000: Main//M2_LOD0/MeshRenderer
-    2300002: Main//M2_LOD1/MeshRenderer
-    2300004: Main//M2_LOD2/MeshRenderer
-    3300000: Main//M2_LOD0/MeshFilter
-    3300002: Main//M2_LOD1/MeshFilter
-    3300004: Main//M2_LOD2/MeshFilter
-    4300000: M2_LOD1
-    4300002: M2_LOD2
-    4300004: M2_LOD0
-    9500000: Main//Animator
-    20500000: Main//LODGroup
-    100100000: Main
+  internalIDToNameTable:
+  - first:
+      1: 100002
+    second: Main/
+  - first:
+      1: 100004
+    second: Main//M2_LOD0
+  - first:
+      1: 100006
+    second: Main//M2_LOD1
+  - first:
+      1: 100008
+    second: Main//M2_LOD2
+  - first:
+      4: 400002
+    second: Main//Transform
+  - first:
+      4: 400004
+    second: Main//M2_LOD0/Transform
+  - first:
+      4: 400006
+    second: Main//M2_LOD1/Transform
+  - first:
+      4: 400008
+    second: Main//M2_LOD2/Transform
+  - first:
+      23: 2300000
+    second: Main//M2_LOD0/MeshRenderer
+  - first:
+      23: 2300002
+    second: Main//M2_LOD1/MeshRenderer
+  - first:
+      23: 2300004
+    second: Main//M2_LOD2/MeshRenderer
+  - first:
+      33: 3300000
+    second: Main//M2_LOD0/MeshFilter
+  - first:
+      33: 3300002
+    second: Main//M2_LOD1/MeshFilter
+  - first:
+      33: 3300004
+    second: Main//M2_LOD2/MeshFilter
+  - first:
+      43: 4300000
+    second: M2_LOD1
+  - first:
+      43: 4300002
+    second: M2_LOD2
+  - first:
+      43: 4300004
+    second: M2_LOD0
+  - first:
+      95: 9500000
+    second: Main//Animator
+  - first:
+      205: 20500000
+    second: Main//LODGroup
+  - first:
+      1001: 100100000
+    second: Main
   externalObjects: {}
+  serializedVersion: 2
   userData: 
   assetBundleName: 
   assetBundleVariant: 
@@ -43,6 +84,7 @@ ScriptedImporter:
     _branchWindScale: 1
     _leafWindScale: 1
     _windVariation: 1
+    _mergeIntersecting: 0
     _removeDoubleSidedFaces: 1
     _settings: []
   _importSettings:
@@ -52,6 +94,7 @@ ScriptedImporter:
       _convertMaterials: 1
       _settings:
       - Id: Pine Branches
+        Shader: Nature Shaders/Tree Leaves
         Type: 6
         Override: {fileID: 2100000, guid: cdeb19fc1162a7648870bd5064bb8e07, type: 2}
         Wind: 1
@@ -64,6 +107,7 @@ ScriptedImporter:
         Colors: []
         Textures: []
       - Id: Pine Stump
+        Shader: Nature Shaders/Tree Bark
         Type: 6
         Override: {fileID: 2100000, guid: 0e5280b5ad85a9349874e0d6f9b528ef, type: 2}
         Wind: 1
@@ -76,6 +120,7 @@ ScriptedImporter:
         Colors: []
         Textures: []
       - Id: Pine Trunk
+        Shader: Nature Shaders/Tree Bark
         Type: 6
         Override: {fileID: 2100000, guid: 1f151dd7c3605464bb7b796c080f9a9a, type: 2}
         Wind: 1
@@ -90,18 +135,6 @@ ScriptedImporter:
     _textureImportSettings:
       _convertTextures: 0
       _settings:
-      - Id: Pine Branches - Albedo
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Pine Branches - Normal
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Pine Branches - Packed
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Pine Branches - Thickness
-        TextureQuality: 1
-        BoostSharpness: 1
       - Id: Pine Stump - Albedo
         TextureQuality: 1
         BoostSharpness: 1
@@ -120,6 +153,18 @@ ScriptedImporter:
       - Id: Pine Trunk - Packed
         TextureQuality: 1
         BoostSharpness: 1
+      - Id: Pine Branches - Albedo
+        TextureQuality: 1
+        BoostSharpness: 1
+      - Id: Pine Branches - Normal
+        TextureQuality: 1
+        BoostSharpness: 1
+      - Id: Pine Branches - Packed
+        TextureQuality: 1
+        BoostSharpness: 1
+      - Id: Pine Branches - Thickness
+        TextureQuality: 1
+        BoostSharpness: 1
     _meshImportSettings:
       _convertMeshes: 1
       _meshComplexity: 0
@@ -128,6 +173,7 @@ ScriptedImporter:
       _branchWindScale: 0.2
       _leafWindScale: 1
       _windVariation: 1
+      _mergeIntersecting: 0
       _removeDoubleSidedFaces: 1
       _settings:
       - Id: M2_LOD0

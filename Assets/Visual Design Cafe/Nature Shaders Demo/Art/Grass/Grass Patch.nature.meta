@@ -1,27 +1,66 @@
 fileFormatVersion: 2
 guid: 527de00f8bf5c304fa1a8b5d89df8579
 ScriptedImporter:
-  fileIDToRecycleName:
-    100000: Main/
-    100002: Main//Meadow_Grass_01_Var4_LOD0
-    100004: Main//Meadow_Grass_01_Var4_LOD1
-    100006: Main//Meadow_Grass_01_Var4_LOD2
-    400000: Main//Transform
-    400002: Main//Meadow_Grass_01_Var4_LOD0/Transform
-    400004: Main//Meadow_Grass_01_Var4_LOD1/Transform
-    400006: Main//Meadow_Grass_01_Var4_LOD2/Transform
-    2300000: Main//Meadow_Grass_01_Var4_LOD0/MeshRenderer
-    2300002: Main//Meadow_Grass_01_Var4_LOD1/MeshRenderer
-    2300004: Main//Meadow_Grass_01_Var4_LOD2/MeshRenderer
-    3300000: Main//Meadow_Grass_01_Var4_LOD0/MeshFilter
-    3300002: Main//Meadow_Grass_01_Var4_LOD1/MeshFilter
-    3300004: Main//Meadow_Grass_01_Var4_LOD2/MeshFilter
-    4300000: Meadow_Grass_01_Var4_LOD1
-    4300002: Meadow_Grass_01_Var4_LOD2
-    4300004: Meadow_Grass_01_Var4_LOD0
-    20500000: Main//LODGroup
-    100100000: Main
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Main/
+  - first:
+      1: 100002
+    second: Main//Meadow_Grass_01_Var4_LOD0
+  - first:
+      1: 100004
+    second: Main//Meadow_Grass_01_Var4_LOD1
+  - first:
+      1: 100006
+    second: Main//Meadow_Grass_01_Var4_LOD2
+  - first:
+      4: 400000
+    second: Main//Transform
+  - first:
+      4: 400002
+    second: Main//Meadow_Grass_01_Var4_LOD0/Transform
+  - first:
+      4: 400004
+    second: Main//Meadow_Grass_01_Var4_LOD1/Transform
+  - first:
+      4: 400006
+    second: Main//Meadow_Grass_01_Var4_LOD2/Transform
+  - first:
+      23: 2300000
+    second: Main//Meadow_Grass_01_Var4_LOD0/MeshRenderer
+  - first:
+      23: 2300002
+    second: Main//Meadow_Grass_01_Var4_LOD1/MeshRenderer
+  - first:
+      23: 2300004
+    second: Main//Meadow_Grass_01_Var4_LOD2/MeshRenderer
+  - first:
+      33: 3300000
+    second: Main//Meadow_Grass_01_Var4_LOD0/MeshFilter
+  - first:
+      33: 3300002
+    second: Main//Meadow_Grass_01_Var4_LOD1/MeshFilter
+  - first:
+      33: 3300004
+    second: Main//Meadow_Grass_01_Var4_LOD2/MeshFilter
+  - first:
+      43: 4300000
+    second: Meadow_Grass_01_Var4_LOD1
+  - first:
+      43: 4300002
+    second: Meadow_Grass_01_Var4_LOD2
+  - first:
+      43: 4300004
+    second: Meadow_Grass_01_Var4_LOD0
+  - first:
+      205: 20500000
+    second: Main//LODGroup
+  - first:
+      1001: 100100000
+    second: Main
   externalObjects: {}
+  serializedVersion: 2
   userData: 
   assetBundleName: 
   assetBundleVariant: 
@@ -52,6 +91,7 @@ ScriptedImporter:
       _convertMaterials: 1
       _settings:
       - Id: Grass Patch
+        Shader: Nature Shaders/Grass
         Type: 6
         Override: {fileID: 2100000, guid: 511943d53f3c8c9418906f1262906084, type: 2}
         Wind: 1
