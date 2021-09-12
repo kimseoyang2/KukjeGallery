@@ -105,19 +105,7 @@ ScriptedImporter:
         Textures: []
     _textureImportSettings:
       _convertTextures: 0
-      _settings:
-      - Id: Grass Patch - Albedo
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Grass Patch - Normal
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Grass Patch - Packed
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Grass Patch - Thickness
-        TextureQuality: 1
-        BoostSharpness: 1
+      _settings: []
     _meshImportSettings:
       _convertMeshes: 1
       _meshComplexity: 1
