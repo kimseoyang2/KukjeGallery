@@ -105,7 +105,19 @@ ScriptedImporter:
         Textures: []
     _textureImportSettings:
       _convertTextures: 0
-      _settings: []
+      _settings:
+      - Id: Red Bush - Albedo
+        TextureQuality: 1
+        BoostSharpness: 1
+      - Id: Red Bush - Normal
+        TextureQuality: 1
+        BoostSharpness: 1
+      - Id: Red Bush - Packed
+        TextureQuality: 1
+        BoostSharpness: 1
+      - Id: Red Bush - Thickness
+        TextureQuality: 1
+        BoostSharpness: 1
     _meshImportSettings:
       _convertMeshes: 1
       _meshComplexity: 0

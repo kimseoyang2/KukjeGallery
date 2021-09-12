@@ -134,37 +134,7 @@ ScriptedImporter:
         Textures: []
     _textureImportSettings:
       _convertTextures: 0
-      _settings:
-      - Id: Pine Stump - Albedo
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Pine Stump - Normal
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Pine Stump - Packed
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Pine Trunk - Albedo
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Pine Trunk - Normal
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Pine Trunk - Packed
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Pine Branches - Albedo
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Pine Branches - Normal
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Pine Branches - Packed
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Pine Branches - Thickness
-        TextureQuality: 1
-        BoostSharpness: 1
+      _settings: []
     _meshImportSettings:
       _convertMeshes: 1
       _meshComplexity: 0
