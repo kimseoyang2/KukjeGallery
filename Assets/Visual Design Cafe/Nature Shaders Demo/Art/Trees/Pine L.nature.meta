@@ -148,16 +148,13 @@ ScriptedImporter:
     _textureImportSettings:
       _convertTextures: 0
       _settings:
-      - Id: Pine Billboards - Albedo
+      - Id: Pine Stump - Albedo
         TextureQuality: 1
         BoostSharpness: 1
-      - Id: Pine Billboards - Normal
+      - Id: Pine Stump - Normal
         TextureQuality: 1
         BoostSharpness: 1
-      - Id: Pine Billboards - Packed
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Pine Billboards - Thickness
+      - Id: Pine Stump - Packed
         TextureQuality: 1
         BoostSharpness: 1
       - Id: Pine Branches - Albedo
@@ -172,15 +169,6 @@ ScriptedImporter:
       - Id: Pine Branches - Thickness
         TextureQuality: 1
         BoostSharpness: 1
-      - Id: Pine Stump - Albedo
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Pine Stump - Normal
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Pine Stump - Packed
-        TextureQuality: 1
-        BoostSharpness: 1
       - Id: Pine Trunk - Albedo
         TextureQuality: 1
         BoostSharpness: 1
@@ -188,6 +176,18 @@ ScriptedImporter:
         TextureQuality: 1
         BoostSharpness: 1
       - Id: Pine Trunk - Packed
+        TextureQuality: 1
+        BoostSharpness: 1
+      - Id: Pine Billboards - Albedo
+        TextureQuality: 1
+        BoostSharpness: 1
+      - Id: Pine Billboards - Normal
+        TextureQuality: 1
+        BoostSharpness: 1
+      - Id: Pine Billboards - Packed
+        TextureQuality: 1
+        BoostSharpness: 1
+      - Id: Pine Billboards - Thickness
         TextureQuality: 1
         BoostSharpness: 1
     _meshImportSettings:
