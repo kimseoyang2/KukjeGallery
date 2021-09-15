@@ -5,12 +5,17 @@ using System.Runtime.InteropServices;
 public class WebRequest : MonoBehaviour
 {
 
-
+    [SerializeField]
+    private int btnIndex;
     [DllImport("__Internal")]
     private static extern void Hello();
 
     [DllImport("__Internal")]
     private static extern void HelloString(string str);
+
+    [DllImport("__Internal")]
+    private static extern void paint_Popup(int btnIndex);
+
 
     [DllImport("__Internal")]
     private static extern void PrintFloatArray(float[] array, int size);
@@ -41,22 +46,7 @@ public class WebRequest : MonoBehaviour
     public void CallJSEvent()
     {
 
-
-        Hello();
-
-        HelloString("This is a string.");
-
-        float[] myArray = new float[10];
-        PrintFloatArray(myArray, myArray.Length);
-
-        int result = AddNumbers(5, 7);
-        Debug.Log(result);
-
-        Debug.Log(StringReturnValueFunction());
-
-        var texture = new Texture2D(0, 0, TextureFormat.ARGB32, false);
-        BindWebGLTexture(texture.GetNativeTextureID());
-        //Application.ExternalEval(string.Format("paint_Popup({0})", codeIndex));
+        paint_Popup(btnIndex);
         Debug.Log(string.Format("paint_Popup({0}) is called", codeIndex));
 
     }
