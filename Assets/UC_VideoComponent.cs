@@ -15,16 +15,13 @@ public class UC_VideoComponent : MonoBehaviour
     public void StartVideo ()
     {
         string url = Application.streamingAssetsPath + "/IntroTest.mp4";
-        if (File.Exists(url))
-        {
-            player.url = url;
 
-            player.Play();
-        }
-        else
-        {
-            Invoke("VideoNotStartedCheck", 3);
-        }
+        player.url = url;
+
+        player.Play();
+
+        Invoke("VideoNotStartedCheck", 3);
+
     }
 
     private void Update ()

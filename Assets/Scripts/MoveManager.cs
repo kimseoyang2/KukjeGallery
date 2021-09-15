@@ -41,6 +41,7 @@ public class MoveManager : SingletonBehavior<MoveManager>
         EventController.inst.OnPCMoveableChanged += mouseDragRotate.SetMouseDragable;
         EventController.inst.OnPCMoveableChanged += rayCastMove.SetMoveable;
 
+        EventController.inst.OnMobileMoveableChanged += rayCastMove.SetMoveable;
         EventController.inst.OnMobileMoveableChanged += touchDragRotate.SetTouchDragable;
         EventController.inst.OnMobileMoveableChanged += joystickL.SetJoysticVisible;
 
@@ -155,7 +156,7 @@ public class MoveManager : SingletonBehavior<MoveManager>
         lookPicCoroutine = null;
     }
 
-    public void ResetCam()
+    public void ResetCam ()
     {
         if (moveableCamera.transform.localPosition != new Vector3(0, 2, 0) && resetCamCoroutine == null)
         {
@@ -163,14 +164,14 @@ public class MoveManager : SingletonBehavior<MoveManager>
         }
     }
 
-    private IEnumerator ResetCamPosRoutine()
+    private IEnumerator ResetCamPosRoutine ()
     {
         float time = 0;
         float duration = 0.5f;
-        float originY = moveableCamera.transform.position.y;
+        float originY = moveableCamera.transform.localPosition.y;
         float curY;
 
-        while(time <= duration)
+        while (time <= duration)
         {
             curY = Mathf.Lerp(originY, 2, time / duration);
             moveableCamera.transform.localPosition = new Vector3(0, curY, 0);
@@ -187,13 +188,13 @@ public class MoveManager : SingletonBehavior<MoveManager>
     {
         if (!MobileCheck.isMobile())
         {
-            EventController.inst.OnPCMoveableChanged.Invoke(true);
+            EventController.inst.OnPCMoveableChanged.Invoke(moveable);
             EventController.inst.OnMobileMoveableChanged.Invoke(false);
         }
         else
         {
             EventController.inst.OnPCMoveableChanged.Invoke(false);
-            EventController.inst.OnMobileMoveableChanged.Invoke(true);
+            EventController.inst.OnMobileMoveableChanged.Invoke(moveable);
         }
     }
 
@@ -206,7 +207,8 @@ public class MoveManager : SingletonBehavior<MoveManager>
         Vector3 targetPos;
 
         GameManager.inst.SetPlayerMoveable(false);
-        moveableObj.GetComponent<Rigidbody>().isKinematic = true;
+        if (moveableObj.GetComponent<Rigidbody>() != null)
+            moveableObj.GetComponent<Rigidbody>().isKinematic = true;
         while (time < animTime)
         {
             targetPos = Vector3.Lerp(playerPosOrigin, newPos, time / animTime);
@@ -216,7 +218,8 @@ public class MoveManager : SingletonBehavior<MoveManager>
             yield return new WaitForEndOfFrame();
             time += Time.deltaTime;
         }
-        moveableObj.GetComponent<Rigidbody>().isKinematic = false;
+        if (moveableObj.GetComponent<Rigidbody>() != null)
+            moveableObj.GetComponent<Rigidbody>().isKinematic = false;
         GameManager.inst.SetPlayerMoveable(true);
     }
 

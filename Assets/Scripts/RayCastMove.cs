@@ -37,10 +37,10 @@ public class RayCastMove : MonoBehaviour
         if (isMoveable)
         {
             ray = MoveManager.inst.moveableCamera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
-
+            
             if (Physics.Raycast(ray.origin, ray.direction, out hitPoint, Mathf.Infinity) && !EventSystem.current.IsPointerOverGameObject())
             {
-                if (isMoveable && isTeleportable)
+                if (isMoveable && isTeleportable && !MobileCheck.isMobile())
                 {
                     if (hitPoint.transform.CompareTag(requireTag))
                     {
