@@ -15,7 +15,7 @@ MonoBehaviour:
   parentPage: {fileID: 0}
   bgmBtn: {fileID: 2878308863673196624}
   exitBtn: {fileID: 2878308863062767836}
-  tipBtn: {fileID: 2878308862321163999}
+  tipBtn: {fileID: 5201367261522439288}
 --- !u!114 &2878308863062767836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,49 +99,6 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 2565829558553821904}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &2878308862321163999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2565829558591924945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 2565829558591924959}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -720,21 +677,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2565829558591924945 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 318179744212428496, guid: 629d441755016424b8605f8670a98204,
-    type: 3}
-  m_PrefabInstance: {fileID: 2878308862221356033}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2565829558591924959 stripped
+--- !u!114 &5201367261522439288 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 318179744212428510, guid: 629d441755016424b8605f8670a98204,
+  m_CorrespondingSourceObject: {fileID: 8061224935650238585, guid: 629d441755016424b8605f8670a98204,
     type: 3}
   m_PrefabInstance: {fileID: 2878308862221356033}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2565829558591924945}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

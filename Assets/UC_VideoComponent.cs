@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
@@ -11,13 +12,19 @@ public class UC_VideoComponent : MonoBehaviour
 
     private bool isVideoStarted = false;
 
-    public void StartVideo()
+    public void StartVideo ()
     {
         string url = Application.streamingAssetsPath + "/IntroTest.mp4";
-        player.url = url;
+        if (File.Exists(url))
+        {
+            player.url = url;
 
-        player.Play();
-        Invoke("VideoNotStartedCheck", 3);
+            player.Play();
+        }
+        else
+        {
+            Invoke("VideoNotStartedCheck", 3);
+        }
     }
 
     private void Update ()
@@ -25,20 +32,20 @@ public class UC_VideoComponent : MonoBehaviour
         if (player.isPlaying)
         {
             isVideoStarted = true;
-        } 
+        }
 
-        if(isVideoStarted)
+        if (isVideoStarted)
         {
-            if(player.isPlaying == false)
+            if (player.isPlaying == false)
             {
                 gameObject.SetActive(false);
             }
         }
     }
 
-    private void VideoNotStartedCheck()
+    private void VideoNotStartedCheck ()
     {
-        if(isVideoStarted == false)
+        if (isVideoStarted == false)
         {
             gameObject.SetActive(false);
         }
