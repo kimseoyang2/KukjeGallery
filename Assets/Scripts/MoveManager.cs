@@ -17,9 +17,9 @@ public class MoveManager : SingletonBehavior<MoveManager>
     [SerializeField]
     private Joystick joystickL = null;
 
-    
+
     public GameObject moveableObj = null;
-    
+
     public GameObject moveableCamera = null;
 
     [SerializeField, Range(0, 1)]
@@ -30,6 +30,9 @@ public class MoveManager : SingletonBehavior<MoveManager>
     [SerializeField, Range(0.1f, 2f)]
     public float touchMoveDuration = 1f;
 
+    private Coroutine lookPicCoroutine = null;
+    private Coroutine resetCamCoroutine = null;
+
     protected override void Awake ()
     {
         base.Awake();
@@ -38,6 +41,7 @@ public class MoveManager : SingletonBehavior<MoveManager>
         EventController.inst.OnPCMoveableChanged += mouseDragRotate.SetMouseDragable;
         EventController.inst.OnPCMoveableChanged += rayCastMove.SetMoveable;
 
+        EventController.inst.OnMobileMoveableChanged += rayCastMove.SetMoveable;
         EventController.inst.OnMobileMoveableChanged += touchDragRotate.SetTouchDragable;
         EventController.inst.OnMobileMoveableChanged += joystickL.SetJoysticVisible;
 
@@ -72,7 +76,7 @@ public class MoveManager : SingletonBehavior<MoveManager>
 
     private void Start ()
     {
-        
+
     }
 
     private void Move (Vector2 moveDelta)
@@ -102,31 +106,99 @@ public class MoveManager : SingletonBehavior<MoveManager>
         }
     }
 
-    public void SetPos(Vector3 newPos)
+    public void SetPos (Vector3 newPos)
     {
         StartCoroutine(SetPosRoutine(newPos));
     }
 
-    public void SetEular(Vector3 newEular)
+    public void SetEular (Vector3 newEular)
     {
         StartCoroutine(SetEularRoutine(newEular));
     }
 
-    public void SetMovable(bool moveable)
+    public void LookPic (PictureViewPoint pic)
+    {
+        Vector3 newPos = Vector3.zero;
+        newPos.y = pic.gameObject.transform.position.y;
+
+        if (lookPicCoroutine != null)
+        {
+            StopCoroutine(lookPicCoroutine);
+            lookPicCoroutine = null;
+        }
+
+        if (moveableCamera.transform.position != newPos && lookPicCoroutine == null)
+        {
+            lookPicCoroutine = StartCoroutine(LookPicRoutine(newPos));
+        }
+    }
+
+    private IEnumerator LookPicRoutine (Vector3 newPos)
+    {
+        float time = 0;
+        float duration = 0.5f;
+
+        Vector3 fromPos = moveableCamera.transform.localPosition;
+        Vector3 targetPos = newPos - new Vector3(0, moveableObj.transform.position.y + 1, 0);
+        Vector3 curPos;
+
+        while (time <= duration)
+        {
+            curPos = Vector3.Lerp(fromPos, targetPos, time / duration);
+            moveableCamera.transform.localPosition = curPos;
+
+            time += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        moveableCamera.transform.localPosition = targetPos;
+
+        lookPicCoroutine = null;
+    }
+
+    public void ResetCam ()
+    {
+        if (moveableCamera.transform.localPosition != new Vector3(0, 2, 0) && resetCamCoroutine == null)
+        {
+            resetCamCoroutine = StartCoroutine(ResetCamPosRoutine());
+        }
+    }
+
+    private IEnumerator ResetCamPosRoutine ()
+    {
+        float time = 0;
+        float duration = 0.5f;
+        float originY = moveableCamera.transform.localPosition.y;
+        float curY;
+
+        while (time <= duration)
+        {
+            curY = Mathf.Lerp(originY, 2, time / duration);
+            moveableCamera.transform.localPosition = new Vector3(0, curY, 0);
+
+            time += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        moveableCamera.transform.localPosition = new Vector3(0, 2, 0);
+        resetCamCoroutine = null;
+    }
+
+    public void SetMovable (bool moveable)
     {
         if (!MobileCheck.isMobile())
         {
-            EventController.inst.OnPCMoveableChanged.Invoke(true);
+            EventController.inst.OnPCMoveableChanged.Invoke(moveable);
             EventController.inst.OnMobileMoveableChanged.Invoke(false);
         }
         else
         {
             EventController.inst.OnPCMoveableChanged.Invoke(false);
-            EventController.inst.OnMobileMoveableChanged.Invoke(true);
+            EventController.inst.OnMobileMoveableChanged.Invoke(moveable);
         }
     }
 
-    private IEnumerator SetPosRoutine(Vector3 newPos)
+    private IEnumerator SetPosRoutine (Vector3 newPos)
     {
         float animTime = touchMoveDuration;
         float time = 0;
@@ -135,6 +207,8 @@ public class MoveManager : SingletonBehavior<MoveManager>
         Vector3 targetPos;
 
         GameManager.inst.SetPlayerMoveable(false);
+        if (moveableObj.GetComponent<Rigidbody>() != null)
+            moveableObj.GetComponent<Rigidbody>().isKinematic = true;
         while (time < animTime)
         {
             targetPos = Vector3.Lerp(playerPosOrigin, newPos, time / animTime);
@@ -144,10 +218,12 @@ public class MoveManager : SingletonBehavior<MoveManager>
             yield return new WaitForEndOfFrame();
             time += Time.deltaTime;
         }
+        if (moveableObj.GetComponent<Rigidbody>() != null)
+            moveableObj.GetComponent<Rigidbody>().isKinematic = false;
         GameManager.inst.SetPlayerMoveable(true);
     }
 
-    private IEnumerator SetEularRoutine(Vector3 newEular)
+    private IEnumerator SetEularRoutine (Vector3 newEular)
     {
         float animTime = touchMoveDuration;
         float time = 0;
@@ -161,7 +237,7 @@ public class MoveManager : SingletonBehavior<MoveManager>
         GameManager.inst.SetPlayerMoveable(false);
         while (time < animTime)
         {
-            targetRot = Quaternion.LerpUnclamped(originRot, destRot, time/animTime);
+            targetRot = Quaternion.LerpUnclamped(originRot, destRot, time / animTime);
 
             moveableObj.transform.rotation = targetRot;
 

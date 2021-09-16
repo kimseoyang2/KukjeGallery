@@ -46,6 +46,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     public void OnPointerDown (PointerEventData eventData)
     {
         ControlJoystick(eventData);
+        MoveManager.inst.ResetCam();
     }
 
     public void OnDrag (PointerEventData eventData)

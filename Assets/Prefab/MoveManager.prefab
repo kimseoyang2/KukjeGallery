@@ -332,6 +332,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchMove: {fileID: 1109321494870134189}
+  requireTag: Floor
+  clickingPic: {fileID: 0}
 --- !u!1 &7947256863068184166
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,21 +49,26 @@ public class KeyboardMove : MonoBehaviour
             if (Input.GetKey(forward))
             {
                 additionalPos += Vector2.up;
+
+                MoveManager.inst.ResetCam();
             }
 
             if (Input.GetKey(backward))
             {
                 additionalPos += Vector2.down;
+                MoveManager.inst.ResetCam();
             }
 
             if (Input.GetKey(right))
             {
                 additionalPos += Vector2.right;
+                MoveManager.inst.ResetCam();
             }
 
             if (Input.GetKey(left))
             {
                 additionalPos += Vector2.left;
+                MoveManager.inst.ResetCam();
             }
 
             if(OnMoveKeyClicked != null)

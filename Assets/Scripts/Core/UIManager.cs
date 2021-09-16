@@ -24,7 +24,7 @@ public class UIManager : SingletonBehavior<UIManager>
         EventController.inst.OnIntroLastBtnClicked += InGamePageOn;
     }
 
-    private void InGamePageOn()
+    private void InGamePageOn() 
     {
         
         introPage.gameObject.SetActive(false);
