@@ -47,6 +47,7 @@ public class WebRequest : MonoBehaviour
     {
 
         paint_Popup(btnIndex);
+        Application.ExternalEval(string.Format("paint_Popup({0})", codeIndex));
         Debug.Log(string.Format("paint_Popup({0}) is called", codeIndex));
 
     }
