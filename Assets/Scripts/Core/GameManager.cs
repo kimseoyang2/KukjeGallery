@@ -45,6 +45,20 @@ public class GameManager : SingletonBehavior<GameManager>
 
     }
 
+    public Texture GetTempTexture(TextureType type)
+    {
+        return ResourceCacheManager.inst.texturesDic[type];
+    }
+
+    public Texture GetTextureFromUri(TextureType type)
+    {
+        if(ResourceCacheManager.inst.originalTextures[type] != null)
+        {
+            return ResourceCacheManager.inst.originalTextures[type];
+        }
+        return null;
+    }
+
     #region PlayerMovement
     public void SetPlayerMoveable (bool isMoveable)
     {
