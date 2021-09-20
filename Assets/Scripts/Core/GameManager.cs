@@ -45,6 +45,20 @@ public class GameManager : SingletonBehavior<GameManager>
 
     }
 
+    public Texture GetTempTexture(TextureType type)
+    {
+        return ResourceCacheManager.inst.texturesDic[type];
+    }
+
+    public Texture GetTextureFromUri(TextureType type)
+    {
+        if(ResourceCacheManager.inst.originalTextures[type] != null)
+        {
+            return ResourceCacheManager.inst.originalTextures[type];
+        }
+        return null;
+    }
+
     #region PlayerMovement
     public void SetPlayerMoveable (bool isMoveable)
     {
@@ -74,7 +88,7 @@ public class GameManager : SingletonBehavior<GameManager>
 
     public void MoveWUC_Touch (Vector3 newPos, Vector3 newEular)
     {
-        if (EventController.inst.SetPlayerNewPos != null)
+        if (EventController.inst.SetPlayerNewPos != null && Vector3.Distance(newPos, MoveManager.inst.moveableObj.transform.position) >= 0.01f )
         {
             EventController.inst.SetPlayerNewPos.Invoke(newPos);
         }

@@ -13,8 +13,13 @@ public class RayCastMove : MonoBehaviour
 
     [SerializeField]
     private WUC_TouchMove touchMove;
+    [SerializeField]
+    private string requireTag;
 
     private MouseDragRotate dragRotate = null;
+
+    [SerializeField]
+    private GameObject clickingPic = null;
 
     private void Start ()
     {
@@ -32,23 +37,57 @@ public class RayCastMove : MonoBehaviour
         if (isMoveable)
         {
             ray = MoveManager.inst.moveableCamera.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray.origin, ray.direction, out hitPoint, Mathf.Infinity))
+            
+            if (Physics.Raycast(ray.origin, ray.direction, out hitPoint, Mathf.Infinity) && !EventSystem.current.IsPointerOverGameObject())
             {
-                if (isMoveable && isTeleportable)
+                if (isMoveable && isTeleportable && !MobileCheck.isMobile())
                 {
-                    touchMove.gameObject.SetActive(true);
-                    touchMove.transform.position = hitPoint.point + Vector3.up * 0.001f;
-
-                    if (Input.GetMouseButtonUp(0))
+                    if (hitPoint.transform.CompareTag(requireTag))
                     {
-                        MoveManager.inst.SetPos(hitPoint.point);
+                        touchMove.gameObject.SetActive(true);
+                        touchMove.transform.position = hitPoint.point + Vector3.up * 0.001f;
+
+                        if (Input.GetMouseButtonUp(0))
+                        {
+                            MoveManager.inst.SetPos(hitPoint.point);
+                        }
+
+                        clickingPic = null;
+                    }
+                    else
+                    {
+                        touchMove.gameObject.SetActive(false);
+                    } 
+                }
+
+                if(hitPoint.transform.GetComponent<PictureViewPoint>() != null)
+                {
+                    PictureViewPoint picture = hitPoint.transform.GetComponent<PictureViewPoint>();
+
+                    if(clickingPic != picture.gameObject)
+                    {
+                        clickingPic = null;
+                    }
+
+                    if(Input.GetMouseButtonDown(0) && clickingPic == null)
+                    {
+                        clickingPic = picture.gameObject;
+                    }
+
+                    if(Input.GetMouseButtonUp(0) && clickingPic != null)
+                    {
+                        picture.OnClick();
                     }
                 }
+                else
+                {
+                    clickingPic = null;
+                } 
             }
             else
             {
                 touchMove.gameObject.SetActive(false);
+                clickingPic = null;
             }
         }
 

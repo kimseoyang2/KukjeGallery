@@ -17,4 +17,7 @@ public class EventController : SingletonBehavior<EventController>
     public Action OnBGMBtnClicked = null;
     public Action OnExitBtnClicked = null;
 
+    // Scene Event
+    public Action<PictureViewPoint> OnClickPicture = null;
+
 }

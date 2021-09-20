@@ -14,7 +14,7 @@ public class BGSoundManager : SingletonBehavior<BGSoundManager>
     protected override void Awake ()
     {
         base.Awake();
-    }
+    } 
 
     public void ChangeClip(int clipIndex)
     {
