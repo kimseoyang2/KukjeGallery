@@ -5194,6 +5194,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoreSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 8603461659773933919, guid: 14e3d3626616fbd49bd23cf2d619ceac,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.5001221
+      objectReference: {fileID: 0}
     - target: {fileID: 8754092365684518079, guid: 14e3d3626616fbd49bd23cf2d619ceac,
         type: 3}
       propertyPath: m_LocalPosition.x
