@@ -10,12 +10,16 @@ public class BGSoundManager : SingletonBehavior<BGSoundManager>
 
     [SerializeField]
     private AudioClip[] clips;
+
     
     protected override void Awake ()
     {
         base.Awake();
-    } 
-
+    }
+    private void Update()
+    {
+      
+    }
     public void ChangeClip(int clipIndex)
     {
         AudioClip newClip;
@@ -37,13 +41,19 @@ public class BGSoundManager : SingletonBehavior<BGSoundManager>
 
     public void BgmSoundOnOff(bool isOn)
     {
-        if(isOn)
+        if (isOn)
         {
             audioSource.volume = 1;
         }
         else
         {
             audioSource.volume = 0;
-        } 
+        }
+
     }
+
+    //오디오 도슨트 플레이리스트
+    // Picture 08,Picture01, Picture14
+
+
 }
