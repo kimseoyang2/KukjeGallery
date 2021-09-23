@@ -1695,12 +1695,35 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1545595544403949776, guid: 629d441755016424b8605f8670a98204,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106695516305912697, guid: 629d441755016424b8605f8670a98204,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4296976273006022684, guid: 629d441755016424b8605f8670a98204,
         type: 3}
       propertyPath: m_Name
       value: InGameBtns
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4806522852926380642, guid: 629d441755016424b8605f8670a98204,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291883023075805899, guid: 629d441755016424b8605f8670a98204,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3688842359505309520, guid: 629d441755016424b8605f8670a98204, type: 3}
+    - {fileID: 8872214220554792292, guid: 629d441755016424b8605f8670a98204, type: 3}
+    - {fileID: 9090594595302426001, guid: 629d441755016424b8605f8670a98204, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 629d441755016424b8605f8670a98204, type: 3}
 --- !u!224 &4254928229201520010 stripped
 RectTransform:

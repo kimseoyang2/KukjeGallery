@@ -52,6 +52,11 @@ public class BGSoundManager : SingletonBehavior<BGSoundManager>
 
     }
 
+    public float GetVolume()
+    {
+        return audioSource.volume;
+    }
+
     //오디오 도슨트 플레이리스트
     // Picture 08,Picture01, Picture14
 

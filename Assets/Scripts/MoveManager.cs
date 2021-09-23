@@ -22,6 +22,9 @@ public class MoveManager : SingletonBehavior<MoveManager>
 
     public GameObject moveableCamera = null;
 
+    [SerializeField]
+    private  float camHeight = 1.5f;
+
     [SerializeField, Range(0, 1)]
     private float moveSpeed = 0.5f;
     [SerializeField, Range(0, 1)]
@@ -52,8 +55,8 @@ public class MoveManager : SingletonBehavior<MoveManager>
 
             joystickL.SetJoysticVisible(false);
 
-            EventController.inst.OnPCMoveableChanged.Invoke(true);
             EventController.inst.OnMobileMoveableChanged.Invoke(false);
+            EventController.inst.OnPCMoveableChanged.Invoke(true);
         }
         else
         {
@@ -76,7 +79,7 @@ public class MoveManager : SingletonBehavior<MoveManager>
 
     private void Start ()
     {
-
+        
     }
 
     private void Move (Vector2 moveDelta)
@@ -158,7 +161,7 @@ public class MoveManager : SingletonBehavior<MoveManager>
 
     public void ResetCam ()
     {
-        if (moveableCamera.transform.localPosition != new Vector3(0, 2, 0) && resetCamCoroutine == null)
+        if (moveableCamera.transform.localPosition != new Vector3(0, camHeight, 0) && resetCamCoroutine == null)
         {
             resetCamCoroutine = StartCoroutine(ResetCamPosRoutine());
         }
@@ -173,14 +176,14 @@ public class MoveManager : SingletonBehavior<MoveManager>
 
         while (time <= duration)
         {
-            curY = Mathf.Lerp(originY, 2, time / duration);
+            curY = Mathf.Lerp(originY, camHeight, time / duration);
             moveableCamera.transform.localPosition = new Vector3(0, curY, 0);
 
             time += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
 
-        moveableCamera.transform.localPosition = new Vector3(0, 2, 0);
+        moveableCamera.transform.localPosition = new Vector3(0, camHeight, 0);
         resetCamCoroutine = null;
     }
 
@@ -188,8 +191,8 @@ public class MoveManager : SingletonBehavior<MoveManager>
     {
         if (!MobileCheck.isMobile())
         {
-            EventController.inst.OnPCMoveableChanged.Invoke(moveable);
             EventController.inst.OnMobileMoveableChanged.Invoke(false);
+            EventController.inst.OnPCMoveableChanged.Invoke(moveable);
         }
         else
         {

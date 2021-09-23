@@ -9,7 +9,7 @@ public class RayCastMove : MonoBehaviour
     private RaycastHit hitPoint = new RaycastHit();
 
     private bool isTeleportable = false;
-    private bool isMoveable = false;
+    private bool isMoveable = true;
 
     [SerializeField]
     private WUC_TouchMove touchMove;

@@ -12,6 +12,10 @@ public class UC_InGameBtns : UC_BaseComponent
     private Button exitBtn;
     [SerializeField]
     private Button tipBtn;
+    [SerializeField]
+    private Sprite bgmBtnOnImg;
+    [SerializeField]
+    private Sprite bgmBtnOffImg;
 
     public Action OnClickExitAction;
     public Action OnClickTipAction;
@@ -29,6 +33,8 @@ public class UC_InGameBtns : UC_BaseComponent
         {
             EventController.inst.OnBGMBtnClicked.Invoke();
         }
+
+        bgmBtn.image.sprite = BGSoundManager.inst.GetVolume() <= 0.5f ? bgmBtnOffImg : bgmBtnOnImg;
     }
 
     private void OnClickExit()
