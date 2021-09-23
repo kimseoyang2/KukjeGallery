@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/K1.unity
     guid: 83183b6df849b5f42aa934f909ab5bd9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/k1_Clone2.unity
     guid: 7cd1b9be69d27b14097ab62ddbf5f656
+  - enabled: 1
+    path: Assets/Scenes/kukjeGallery.unity
+    guid: 427ba5ce71ff8aa438d99163092bbe0a
   m_configObjects: {}

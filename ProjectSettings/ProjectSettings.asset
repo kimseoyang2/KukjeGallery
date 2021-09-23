@@ -513,6 +513,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
   scriptingDefineSymbols:
+    1: RH_SerializedDictionary
     13: RH_SerializedDictionary
   platformArchitecture: {}
   scriptingBackend: {}

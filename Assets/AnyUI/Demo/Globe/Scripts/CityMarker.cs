@@ -15,13 +15,13 @@ namespace AnyUI.Demo
         public Popup CityPopup;
         public Sprite ActiveImage;
         public Sprite InactiveImage;
-<<<<<<< HEAD
+
         [SerializeField]
         private int codeIndex;
         [SerializeField]
         private int btnIndex;
-=======
->>>>>>> b1c3fc40b605553191da667f6df4b0b5b682d756
+
+
         [HideInInspector]
         public RectTransform RectTransform;
         //-----------------------------------------------------------------------------------------------------
@@ -40,7 +40,7 @@ namespace AnyUI.Demo
         //-----------------------------------------------------------------------------------------------------
         public void OnClick()
         {
-<<<<<<< HEAD
+
             CallJSEvent(codeIndex, btnIndex);
            // if (CityMarkerState == CITYMARKERSTATE.INACTIVE&& CityPopup.CanMove) CityPopup.RelocatePopup(this);      
         }
@@ -49,10 +49,10 @@ namespace AnyUI.Demo
         {
             Debug.Log(string.Format("paint_Popup({0}, {1}) is called", codeIndex, btnIndex));
 
-=======
+
 
             if (CityMarkerState == CITYMARKERSTATE.INACTIVE&& CityPopup.CanMove) CityPopup.RelocatePopup(this);      
->>>>>>> b1c3fc40b605553191da667f6df4b0b5b682d756
+
         }
         //-----------------------------------------------------------------------------------------------------
         public void OnPointerEnter(PointerEventData eventData)

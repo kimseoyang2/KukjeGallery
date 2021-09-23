@@ -63,21 +63,21 @@ namespace AnyUI {
             mimeTransformUVs = new Vector2[mimeTransforms.Length];
             barycentricsAndTriangleIndices = new Vector3[mimeTransforms.Length];
             //sizeof(Vector2) = 8
-<<<<<<< HEAD
+
             //wantedUVCoordinatesBuffer = new ComputeBuffer(mimeTransformUVs.Length, 8);
             //sizeof(float3) = 12
             //barycentricsAndTriangleIndicesOutputBuffer = new ComputeBuffer(mimeTransformUVs.Length, 12);
             //Shader.SetBuffer(kernelIndex, "BarycentricsAndTriangleIndices", barycentricsAndTriangleIndicesOutputBuffer);
             
             //Shader.SetInt("OutputBufferSize", mimeTransformUVs.Length);
-=======
+
             wantedUVCoordinatesBuffer = new ComputeBuffer(mimeTransformUVs.Length, 8);
             //sizeof(float3) = 12
             barycentricsAndTriangleIndicesOutputBuffer = new ComputeBuffer(mimeTransformUVs.Length, 12);
             Shader.SetBuffer(kernelIndex, "BarycentricsAndTriangleIndices", barycentricsAndTriangleIndicesOutputBuffer);
             
             Shader.SetInt("OutputBufferSize", mimeTransformUVs.Length);
->>>>>>> b1c3fc40b605553191da667f6df4b0b5b682d756
+
 
         }
 
