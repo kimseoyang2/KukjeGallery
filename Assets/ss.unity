@@ -3911,6 +3911,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Floor
       objectReference: {fileID: 0}
+    - target: {fileID: 237243532594794319, guid: a475cdea3e01b974c84c6cbfb1ef2d1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 270006318309776879, guid: a475cdea3e01b974c84c6cbfb1ef2d1b,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5179,7 +5184,7 @@ PrefabInstance:
     - target: {fileID: 6454688313079774386, guid: a475cdea3e01b974c84c6cbfb1ef2d1b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6454688313079774386, guid: a475cdea3e01b974c84c6cbfb1ef2d1b,
         type: 3}

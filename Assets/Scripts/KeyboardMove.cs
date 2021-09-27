@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class KeyboardMove : MonoBehaviour
 {
-    private KeyCode forward = KeyCode.W;
-    private KeyCode backward = KeyCode.S;
-    private KeyCode right = KeyCode.D;
-    private KeyCode left = KeyCode.A;
+    private KeyCode forward = KeyCode.UpArrow;
+    private KeyCode backward = KeyCode.DownArrow;
+    private KeyCode right = KeyCode.RightArrow;
+    private KeyCode left = KeyCode.LeftArrow;
 
     private Coroutine moveUpdateCoroutine = null;
 

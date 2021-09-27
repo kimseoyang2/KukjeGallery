@@ -97,7 +97,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaTest: 1
-    - _AlphaTestThreshold: 0.4
+    - _AlphaTestThreshold: 1
     - _BakedMeshData: 1
     - _BumpScale: 1
     - _ColorCorrection: 1
