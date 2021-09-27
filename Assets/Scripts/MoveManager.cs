@@ -142,7 +142,7 @@ public class MoveManager : SingletonBehavior<MoveManager>
         float duration = 0.5f;
 
         Vector3 fromPos = moveableCamera.transform.localPosition;
-        Vector3 targetPos = newPos - new Vector3(0, moveableObj.transform.position.y + 1, 0);
+        Vector3 targetPos = newPos - new Vector3(0, moveableObj.transform.position.y, 0);
         Vector3 curPos;
 
         while (time <= duration)

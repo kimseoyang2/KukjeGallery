@@ -21,11 +21,12 @@ public class WUC_ClickPopup : MonoBehaviour
 
     private void Awake ()
     {
-        btn.onClick.AddListener(() => OnClickBtn(codeIndex, btnIndex));
+        btn.onClick.AddListener(() => OnClickBtn(codeIndex));
     }
 
-    private void OnClickBtn(int code, int btn)
+    private void OnClickBtn(int codeIndex)
     {
-        Debug.Log(string.Format("JS Popup({0}, {1}) is called", code, btn));
+        Application.ExternalEval(string.Format("paint_popup({0})", codeIndex));
+        Debug.Log(string.Format("JS Popup({0}) is called", codeIndex));
     }
 }
