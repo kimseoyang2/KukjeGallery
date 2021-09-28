@@ -134,6 +134,8 @@ public class MoveManager : SingletonBehavior<MoveManager>
         {
             lookPicCoroutine = StartCoroutine(LookPicRoutine(newPos));
         }
+
+        mouseDragRotate.ResetDrag();
     }
 
     private IEnumerator LookPicRoutine (Vector3 newPos)
