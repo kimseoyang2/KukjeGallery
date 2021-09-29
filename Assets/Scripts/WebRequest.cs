@@ -33,6 +33,10 @@ public class WebRequest : MonoBehaviour
     //그림 상세보기 자바스크립트 호출함수
     public void CallJSEvent(int codeIndex)
     {
+    #if !UNITY_EDITOR && UNITY_WEBGL
+        // disable WebGLInput.captureAllKeyboardInput so elements in web page can handle keabord inputs
+        WebGLInput.captureAllKeyboardInput = false;
+    #endif
         Application.ExternalEval(string.Format("paint_popup({0})", codeIndex));
 
         Debug.Log(string.Format("paint_Popup({0}) is called", codeIndex));
