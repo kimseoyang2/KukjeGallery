@@ -15,6 +15,7 @@ public class BGSoundManager : SingletonBehavior<BGSoundManager>
     protected override void Awake ()
     {
         base.Awake();
+     
     }
     private void Update()
     {
@@ -37,6 +38,9 @@ public class BGSoundManager : SingletonBehavior<BGSoundManager>
         audioSource.Stop();
         audioSource.clip = newClip;
         audioSource.Play();
+
+
+    
     }
 
     public void BgmSoundOnOff(bool isOn)
