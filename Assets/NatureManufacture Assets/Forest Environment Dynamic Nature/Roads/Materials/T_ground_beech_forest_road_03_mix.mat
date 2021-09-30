@@ -427,7 +427,7 @@ Material:
     - _Float1: 0
     - _Float2: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 1
     - _GlossyReflections: 1
     - _HdrpVersion: 2
     - _HeightAmplitude: 0.0245
