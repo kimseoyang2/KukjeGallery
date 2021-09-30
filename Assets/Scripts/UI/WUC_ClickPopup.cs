@@ -26,7 +26,11 @@ public class WUC_ClickPopup : MonoBehaviour
 
     private void OnClickBtn(int codeIndex)
     {
+
+
         Application.ExternalEval(string.Format("paint_popup({0})", codeIndex));
         Debug.Log(string.Format("JS Popup({0}) is called", codeIndex));
+
     }
+    
 }

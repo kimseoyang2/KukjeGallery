@@ -14,10 +14,7 @@ public class GameManager : SingletonBehavior<GameManager>
         Init();
 
       
-        #if !UNITY_EDITOR && UNITY_WEBGL
-        // disable WebGLInput.captureAllKeyboardInput so elements in web page can handle keabord inputs
-        WebGLInput.captureAllKeyboardInput = false;
-        #endif
+
         
     }
 
