@@ -28,6 +28,7 @@ public class VideoController_Forest : MonoBehaviour
         {
             Screen.SetActive(true);
             videoPlayer.Play();
+            
 
         }
     }

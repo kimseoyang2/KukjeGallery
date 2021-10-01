@@ -19,10 +19,21 @@ public class BGSoundManager : SingletonBehavior<BGSoundManager>
     }
     private void Update()
     {
-      
+      if(audioSource.clip != clips[0])
+        {            
+            if(!audioSource.isPlaying)
+            {
+                ChangeClip(0);
+            }
+        }
     }
     public void ChangeClip(int clipIndex)
     {
+        if(clips[clipIndex] == audioSource.clip)
+        {
+            clipIndex = 0;
+        }
+
         AudioClip newClip;
         try
         {
@@ -34,13 +45,17 @@ public class BGSoundManager : SingletonBehavior<BGSoundManager>
             return;
         }
 
+        if(clipIndex == 0)
+        {
+            audioSource.loop = true;
+        }else
+        {
+            audioSource.loop = false;
+        }
 
         audioSource.Stop();
         audioSource.clip = newClip;
         audioSource.Play();
-
-
-    
     }
 
     public void BgmSoundOnOff(bool isOn)
