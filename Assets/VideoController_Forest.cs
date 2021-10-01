@@ -8,6 +8,8 @@ public class VideoController_Forest : MonoBehaviour
     public VideoPlayer videoPlayer;
     public GameObject Screen;
     public string VideoName;
+    public BGSoundManager BGSoundManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class VideoController_Forest : MonoBehaviour
         {
             Screen.SetActive(true);
             videoPlayer.Play();
+            BGSoundManager.BgmSoundOnOff(false);
             
 
         }

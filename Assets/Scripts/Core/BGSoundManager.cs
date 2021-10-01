@@ -9,7 +9,7 @@ public class BGSoundManager : SingletonBehavior<BGSoundManager>
     private AudioSource audioSource;
 
     [SerializeField]
-    private AudioClip[] clips;
+    public AudioClip[] clips;
 
     
     protected override void Awake ()
