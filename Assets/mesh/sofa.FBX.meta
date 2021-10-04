@@ -3,7 +3,17 @@ guid: ec81198169886ad4daa17988777b704d
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ka_design_m3_3_seater_mtl_1
+    second: {fileID: 2100000, guid: c8656b88255c56c41aea22e1d3aada35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ka_design_m3_3_seater_mtl_2
+    second: {fileID: 2100000, guid: 1742b92cc0171434d9eb8bb61ccd86ea, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
