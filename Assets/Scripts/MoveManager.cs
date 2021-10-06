@@ -22,8 +22,7 @@ public class MoveManager : SingletonBehavior<MoveManager>
 
     public GameObject moveableCamera = null;
 
-    [SerializeField]
-    private  float camHeight = 1.5f;
+  public float camHeight = 1.5f;
 
     [SerializeField, Range(0, 1)]
     private float moveSpeed = 0.5f;
