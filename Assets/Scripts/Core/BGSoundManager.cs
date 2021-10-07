@@ -11,6 +11,8 @@ public class BGSoundManager : SingletonBehavior<BGSoundManager>
     [SerializeField]
     public AudioClip[] clips;
 
+    public bool isOn;
+
     
     protected override void Awake ()
     {
