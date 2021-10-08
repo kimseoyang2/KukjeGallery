@@ -446,7 +446,7 @@ Material:
     - _EnableWind: 0
     - _EnergyConservingSpecularColor: 1
     - _GlossMapScale: 1
-    - _Glossiness: 1
+    - _Glossiness: 0.231
     - _GlossyReflections: 1
     - _HdrpVersion: 1
     - _HeightAmplitude: 0.02
@@ -520,7 +520,7 @@ Material:
     - _LinkDetailsWithBase2: 1
     - _LinkDetailsWithBase3: 1
     - _MaterialID: 1
-    - _Metallic: 1
+    - _Metallic: 0.621
     - _Metallic0: 0
     - _Metallic1: 0
     - _Metallic2: 0
@@ -675,7 +675,7 @@ Material:
     - _BaseColor2: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor3: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

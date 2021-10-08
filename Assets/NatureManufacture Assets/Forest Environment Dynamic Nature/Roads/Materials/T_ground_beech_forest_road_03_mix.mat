@@ -426,8 +426,8 @@ Material:
     - _Float0: 1
     - _Float1: 0
     - _Float2: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 1
+    - _GlossMapScale: 0.358
+    - _Glossiness: 0.735
     - _GlossyReflections: 1
     - _HdrpVersion: 2
     - _HeightAmplitude: 0.0245
@@ -507,7 +507,7 @@ Material:
     - _MainRoadParallaxPower: 0.0059
     - _MainRoadSmoothnessPower: 1
     - _MaterialID: 1
-    - _Metallic: 0
+    - _Metallic: 0.303
     - _Metallic0: 1
     - _Metallic1: 1
     - _Metallic2: 1
@@ -644,7 +644,7 @@ Material:
     - _BaseColor3: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap0_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.23584908, g: 0.14573693, b: 0.14573693, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DiffusionProfileAsset0: {r: 0, g: 0, b: 0, a: 0}
     - _DiffusionProfileAsset1: {r: 0, g: 0, b: 0, a: 0}
