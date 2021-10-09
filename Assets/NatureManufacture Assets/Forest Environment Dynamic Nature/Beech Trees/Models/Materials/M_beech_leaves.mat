@@ -221,7 +221,7 @@ Material:
     - _EnableSpecularOcclusion: 0
     - _EnableWind: 1
     - _EnergyConservingSpecularColor: 1
-    - _Glossiness: 0
+    - _Glossiness: 1
     - _HdrpVersion: 1
     - _HeightAmplitude: 0.02
     - _HeightCenter: 0.5
@@ -240,7 +240,7 @@ Material:
     - _LightingQuality: 0
     - _LinkDetailsWithBase: 1
     - _MaterialID: 5
-    - _Metallic: 0.531
+    - _Metallic: 0.217
     - _MetallicPower: 0
     - _MotionVectors: 1
     - _NormalMapScale: 1
@@ -348,8 +348,8 @@ Material:
     - _OcclusionRemap: {r: 0, g: 1, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
-    - _Tint: {r: 0.16602886, g: 0.38679248, b: 0.2885567, a: 1}
-    - _TintVariation: {r: 0.673077, g: 1, b: 0, a: 1}
+    - _Tint: {r: 0.1282485, g: 0.20754719, b: 0.1336758, a: 1}
+    - _TintVariation: {r: 0.42725497, g: 0.5188679, b: 0.23740655, a: 1}
     - _TranslucencyColor: {r: 1, g: 1, b: 1, a: 1}
     - _TranslucentColor: {r: 0.8113207, g: 0.7387587, b: 0.6314525, a: 1}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
