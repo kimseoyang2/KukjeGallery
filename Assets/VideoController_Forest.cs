@@ -42,7 +42,7 @@ public class VideoController_Forest : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            BGSoundManager.BgmSoundOnOff(true);
+            //BGSoundManager.BgmSoundOnOff(true);
             Screen.SetActive(false);
             videoPlayer.Stop();
 

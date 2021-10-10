@@ -106,6 +106,9 @@ ScriptedImporter:
     _textureImportSettings:
       _convertTextures: 0
       _settings:
+      - Id: Forest_black_cherry_BC
+        TextureQuality: 1
+        BoostSharpness: 1
       - Id: Grass Patch - Normal
         TextureQuality: 1
         BoostSharpness: 1
@@ -113,9 +116,6 @@ ScriptedImporter:
         TextureQuality: 1
         BoostSharpness: 1
       - Id: Grass Patch - Thickness
-        TextureQuality: 1
-        BoostSharpness: 1
-      - Id: Forest_black_cherry_BC
         TextureQuality: 1
         BoostSharpness: 1
     _meshImportSettings:

@@ -26,9 +26,9 @@ public class VideoController : MonoBehaviour
 
         if (other.tag == "Player")
         {
-   
-            videoPlayer.Play();
             BGSoundManager.BgmSoundOnOff(false);
+            videoPlayer.Play();
+          
             print("Play Movie");
 
         }

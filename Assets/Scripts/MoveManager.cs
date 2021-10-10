@@ -121,7 +121,27 @@ public class MoveManager : SingletonBehavior<MoveManager>
     public void LookPic (PictureViewPoint pic)
     {
         Vector3 newPos = Vector3.zero;
-        newPos.y = pic.gameObject.transform.position.y;
+        newPos.y = moveableCamera.gameObject.transform.position.y;
+
+        if (lookPicCoroutine != null)
+        {
+            StopCoroutine(lookPicCoroutine);
+            lookPicCoroutine = null;
+        }
+
+        if (moveableCamera.transform.position != newPos && lookPicCoroutine == null)
+        {
+            lookPicCoroutine = StartCoroutine(LookPicRoutine(newPos));
+        }
+
+        mouseDragRotate.ResetDrag();
+    }
+
+
+    public void HealingLook(HealingPark pic)
+    {
+        Vector3 newPos = Vector3.zero;
+        newPos.y = moveableCamera.gameObject.transform.position.y;
 
         if (lookPicCoroutine != null)
         {
