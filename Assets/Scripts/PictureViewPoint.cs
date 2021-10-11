@@ -6,8 +6,12 @@ public class PictureViewPoint : MonoBehaviour
 {
     public WUC_TouchMove movePoint;
     public WUC_TouchMove teleportPoint;
+    public WUC_TouchMove HealingPoint;
     public BGSoundManager bGSoundManager;
     public bool isMove;
+
+    public GameObject HealingPark;
+    public VideoController_Forest videoController_Forest;
 
 
 
@@ -43,6 +47,17 @@ public class PictureViewPoint : MonoBehaviour
             bGSoundManager.BgmSoundOnOff(true);
             bGSoundManager.ChangeClip(0);
          
+        }
+
+        if(HealingPoint != null)
+        {
+
+            Vector3 targetPos = HealingPoint.transform.position;
+            Vector3 targetEular = HealingPoint.transform.localEulerAngles;
+            videoController_Forest.enabled = true;
+    // HealingPark.SetActive(true);
+    GameManager.inst.MoveWUC_Touch(targetPos, targetEular);
+            MoveManager.inst.LookPic(this);
         }
     }
 
