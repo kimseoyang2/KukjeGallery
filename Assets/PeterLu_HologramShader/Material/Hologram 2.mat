@@ -69,17 +69,17 @@ Material:
     - _GlitchEffectPeriod: -1.25
     - _GlitchEffectStrength: 1
     - _GlitchPeriod: 27.22
-    - _GlitchStrength: 0.0033
+    - _GlitchStrength: 0
     - _GlitchX: -0.14
     - _GlitchY: 40.53
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HoloCrowdness: 2
-    - _HoloDistance: 0.502
+    - _HoloDistance: 0.599
     - _HoloGap: 0.23
-    - _HoloSpeed: 1
-    - _HoloValue: 0.8
+    - _HoloSpeed: 0.34
+    - _HoloValue: 0.44
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1

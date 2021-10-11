@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: M_beech_leaves
   m_Shader: {fileID: 4800000, guid: c06c91c9416ad0f4e8a67d6103e77fdc, type: 3}
-  m_ShaderKeywords: _ALPHATEST _BAKEDMESHDATA_OFF _COLOR_TINT _INTERACTION_OFF _LIGHTING_QUALITY_HIGH
+  m_ShaderKeywords: _ALPHATEST _COLOR_TINT _INTERACTION_OFF _LIGHTING_QUALITY_HIGH
     _NORMALMAP _OVERLAY _WIND
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -239,7 +239,7 @@ Material:
     - _EnableWind: 1
     - _EnergyConservingSpecularColor: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0.29
+    - _Glossiness: 1
     - _GlossyReflections: 1
     - _HdrpVersion: 1
     - _HeightAmplitude: 0.02
@@ -259,7 +259,7 @@ Material:
     - _LightingQuality: 0
     - _LinkDetailsWithBase: 1
     - _MaterialID: 5
-    - _Metallic: 0.432
+    - _Metallic: 0.555
     - _MetallicPower: 0
     - _Mode: 1
     - _MotionVectors: 1
@@ -372,8 +372,8 @@ Material:
     - _OcclusionRemap: {r: 0, g: 1, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
-    - _Tint: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
-    - _TintVariation: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+    - _Tint: {r: 0.3667524, g: 1, b: 0, a: 1}
+    - _TintVariation: {r: 0.5149195, g: 1, b: 0, a: 1}
     - _TranslucencyColor: {r: 1, g: 1, b: 1, a: 1}
     - _TranslucentColor: {r: 0.8113207, g: 0.7387587, b: 0.6314525, a: 1}
     - _TransmittanceColor: {r: 1, g: 1, b: 1, a: 1}
