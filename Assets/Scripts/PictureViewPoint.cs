@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class PictureViewPoint : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class PictureViewPoint : MonoBehaviour
 
     public GameObject HealingPark;
     public VideoController_Forest videoController_Forest;
+
+    public VideoPlayer videoPlayer;
+
 
 
 
@@ -28,6 +32,8 @@ public class PictureViewPoint : MonoBehaviour
     }
     public void OnClick()
     {
+   
+   
         if (movePoint != null)
         {
 

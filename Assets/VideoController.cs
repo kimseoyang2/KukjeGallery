@@ -8,6 +8,9 @@ public class VideoController : MonoBehaviour
     public VideoPlayer videoPlayer;
     public string VideoName;
     public BGSoundManager BGSoundManager;
+
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +29,19 @@ public class VideoController : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            BGSoundManager.BgmSoundOnOff(false);
+
             videoPlayer.Play();
-          
-            print("Play Movie");
+            BGSoundManager.BgmSoundOnOff(false);
+
+
+            // StartCoroutine("coroutine");
+
+
+
+
+
+
+
 
         }
     }
@@ -41,11 +53,15 @@ public class VideoController : MonoBehaviour
         if (other.tag == "Player")
         {
 
-            BGSoundManager.BgmSoundOnOff(true);
             videoPlayer.Stop();
+            BGSoundManager.BgmSoundOnOff(true);
+            
+            
+         
+         
 
         }
     }
 
-
+  
 }
