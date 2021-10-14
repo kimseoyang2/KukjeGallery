@@ -49,7 +49,7 @@ public class VideoController_Forest : MonoBehaviour
             print("xxxx");
            
            videoController_Forest.enabled = false;
-            //BGSoundManager.BgmSoundOnOff(true);
+            BGSoundManager.BgmSoundOnOff(true);
             Screen.SetActive(false);
             videoPlayer.Stop();
         
